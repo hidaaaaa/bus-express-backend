@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <% include ./partials/links %>
+   
+   <title>BusExpress| Quên mật khẩu</title>
+  </head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 10px auto;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px 15px;
+  width: 25%;
+  min-width: 300px;
+  border-radius: 3px;
+  border: 1px solid #d1d5da;
+
+}
+ .error{
+ display: none;
+}
+.fadeout{
+  -webkit-animation: fade 2s ;
+  -o-animation: fade 2s ;
+  animation: fade 2s ;
+  animation-fill-mode:forwards;
+}
+@keyframes{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    display: none;
+  }
+}
+.title {
+  text-align: center;  
+  margin: 30px auto 20px 10px;
+  font-size: 18px;
+}
+.text-center{
+  text-align: center;  
+  margin: 100px auto 10px 10px;
+  font-size: 23px;
+
+}
+.noti{
+   width: 30%;
+  height: 40px;
+  margin-left:50%;
+  transform:translate(-50%,0);
+  margin-bottom:20px;
+  transition:1s;
+  line-height: 40px;
+  text-align: center;
+  z-index:99;
+}
+input {
+  padding: 10px;
+  width: 100%;
+  margin:auto;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 3px;
+  border: 1px solid #d1d5da;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+
+}
+
+/* Hide all steps by default: */
+.tab {
+  text-align: center;
+  display: none;
+}
+
+button {
+  background-color: #3246a4;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: Raleway;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+button:hover {
+  opacity: 0.8; 
+}
+
+#prevBtn {
+  background-color: white;
+  color: black;
+  display: inline;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 15px 2px;
+  background-color: #1e62d8;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+#handleBack{
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  width: 80px;
+  color: black;
+
+}
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color:#1e62d8;
+}
+</style>
+<body>
+    <% include ./partials/header %>
+<h1 class="text-center mb-3">
+        <a href="/home" style="text-decoration: none;color: #3256a4;">BusExpress</a>
+</h1>
+<p class="title">Khôi phục mật khẩu</p>
+<div class="noti error">
+  <i class="fas fa-exclamation-circle fa-1x" style="margin-right: 15px; color: #f55448"></i>
+</div>
+<div id="regForm" >
+  
+  <!-- One "tab" for each step in the form: -->
+  <p style="font-weight: bold;">Nhập địa chỉ email đã kích hoạt của tài khoản của bạn và chúng tôi sẽ gửi cho bạn một mã bí mật để thay đổi mật khẩu</p>
+  <div class="tab">
+    <p><input placeholder="Nhập email..."  name="email" required id="email"></p>
+     <div style="overflow:auto;">
+      <div >
+        <button type="button" id="handlePost" onclick="handlePost(event)">Gửi mã xác nhận</button>
+      </div>
+    </div>
+  </div>
+  <div class="tab">
+    <p><input placeholder="Nhập mã xác nhận" oninput="this.className = ''" id="secret-code"></p>
+   <div style="overflow:auto;">
+      <div >
+        <button type="button" id="handleBack" onclick="handleBack()">Back</button>
+        <button type="button" id="handleConfirm" onclick="handleConfirm()">Confirm</button>
+      </div>
+    </div>
+  <!--   <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p> -->
+  </div>
+  <div class="tab">
+    <p><input type="text" name="" placeholder="Mật khẩu mới" id="new"></p>
+    <p><input type="text" name="" placeholder="Xác nhận" id="confirm"></p>
+    <div style="overflow:auto;">
+      <div >
+        <button type="button" id="handleChange" onclick="handleChange()">Thay đổi</button>
+      </div>
+    </div>
+  </div>
+ <!--  <div class="tab">
+    <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+  </div> -->
+  
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;display: none;">
+    <span class="step" id="0"></span>
+    <span class="step" id="1"></span>
+    <span class="step" id="3"></span>
+  </div>
+  <p id="demo"></p>
+
+</div>
+  <% include ./partials/footer %>
+    
+    
+
+<script src="/resetpass.js"></script>
+
+</body>
+</html>

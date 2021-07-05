@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <!-- My own CSS -->
+    <link rel="stylesheet" type="text/css" href="/panel.css">
+
+
+     <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+    
+    <!-- Import font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+   
+
+   <title>BusExpress| Tài khoản</title>
+  </head>
+  <body>
+<div class="container">
+  
+    
+<% include ./partials/header %>
+<div id="form-control">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <a href="/home" style="text-decoration: none;color: #3256a4;">Bus Express</a>
+      </h1>
+      <% include ./partials/messages %>
+        <div class="form form-register active" id="dangki">
+          <img class="img-bg" src="/images/register.png" wid alt="">
+              <form id="form" action="/user/account/register" method="POST" class="form-col2">
+  <div class="input-box">
+    <label class="input-label">Tên người dùng</label>
+    <input type="text" name="name" id="name" class="input-1" pattern="[a-zA-Z0-9._%+-]+@[a-z]+.[a-z._%+-]{2,0}$" onfocus="setFocus(true)" onblur="setFocus(false)" />
+  </div>
+  <div class="input-box">
+    <label class="input-label">Địa chỉ email</label>
+    <input type="email" name="email" id="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" oninvalid="this.setCustomValidity('Email không hợp lệ !')" />
+  </div>
+  <div class="input-box ">
+    <label class="input-label">Mật khẩu</label>
+    <input type="password"  id="password" onkeyup="handleTypePassRes()"
+    name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+  </div>
+  <div class="input-box ">
+    <label class="input-label">Xác thực mật khẩu</label>
+    <input type="password"  id="password2" onkeyup="handleConfirmPass()"
+    name="password2" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+  </div>
+
+  <button type="submit" class="button-log" id="saveResBtn" disabled style="margin-top: 40px; font-weight:bold;">ĐĂNG KÍ</button>
+  <div class="clear"></div>
+              <p class="lead mt-4"><a class="single" href="#" data-target="dangnhap">Đăng nhập</a></p>
+
+</form>
+              <!-- <button type="submit" class="button-log" id="saveResBtn" disabled>
+                <strong>Tiếp tục</strong>
+              </button> -->
+              <!-- <p class="lead mt-4"><a class="single" href="#" data-target="dangnhap">Đăng nhập</a></p> -->
+            </form>
+            <div class="password-guidelines">
+          <p class="guidelines-header">Yêu cầu mật khẩu</p>
+          <div class="guidelines-description">
+            <p class="pass-rule">Có ít nhất 6 ̉kí tự</p>
+            <p class="pass-rule">Có ít nhất 1 kí tự số </p> 
+            <p class="pass-rule">Bao gồm kí tự đặc biệt</p>
+            <p class="pass-rule">Khớp mật khẩu</p>
+          </div>
+         </div>
+        </div>
+        
+        <div class="form form-login" id="dangnhap">
+            <form action="/user/account/login" method="POST">
+              <div class="form-group">
+              
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  value="<%= typeof email != 'undefined' ? email : '' %>"
+                />
+              </div>
+             <div class="form-group">
+              
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                placeholder="Password"
+                  value="<%= typeof password != 'undefined' ? password : '' %>"
+
+                />
+              </div>
+              <button type="submit" class="button-log" id="handleLogin">
+                <strong>TIẾP TỤC</strong>
+              </button>
+              <p class="lead mt-4"><a style="text-decoration: none;" href="/user/reset">Quên mật khẩu? </a> <a class="single" href="#" data-target="dangki">Đăng kí</a></p>
+            </form>
+        </div>
+      
+    </div>
+  </div>
+</div>
+<% include ./partials/footer %>
+
+<script src="/user.js"></script>
+<script src="/validation.js"></script>
+<link rel="stylesheet" href="/log.css">
+</div>
+  
+  </body>
+<script>
+  $(document).ready(function(){
+  $(window). scrollTop(0);
+  
+})
+  function setFocus(on) {
+  var element = document.activeElement;
+  if (on) {
+    setTimeout(function () {
+      element.parentNode.classList.add("focus");
+    });
+  } else {
+    let box = document.querySelector(".input-box");
+    box.classList.remove("focus");
+    $("input").each(function () {
+      var $input = $(this);
+      var $parent = $input.closest(".input-box");
+      if ($input.val()) $parent.addClass("focus");
+      else $parent.removeClass("focus");
+    });
+  }
+}
+
+</script>
+</html>

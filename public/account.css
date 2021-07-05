@@ -1,0 +1,263 @@
+  
+
+
+
+.show{
+  display: flex;
+}
+.change-password-modal,.change-email-modal,.change-ticket-modal {
+  width: 100%;
+  display: none;
+  /*margin-left: 45%;
+  margin-top: 100px;*/
+
+  flex-direction: column;
+  border-radius: 2px;
+  height: 400px;
+  padding: 0 10px;
+  /*box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);*/
+}
+
+.modal-tab {
+  margin:10px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #3C414F;
+}
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.modal-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+ 
+ 
+}
+ 
+ .modal-form-group .modal-hlp-txt {
+    font-size: 14px;
+  }
+.modal-form-group input {
+    font-size: 13px;
+    padding: 10px 0px;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    outline: none;
+  }
+.modal-form-group label {
+    color: #3C414F;
+    font-weight: 600;
+  }
+.modal-form, .password-guidelines {
+  width: 45%;
+  padding: 10px 10px;
+
+
+}
+.password-guidelines {
+  border-radius: 2px;
+ /* border: 1px solid #ccc;*/
+  padding: 0px 10px;
+  height: 75%;
+}
+.guidelines-header {
+  color: #3C414F;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px;
+}
+.guidelines-sub-header {
+  color: #3C414F;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 0px;
+}
+.guidelines-description p {
+    color: #7a7676;
+    margin-bottom: 5px;
+   
+  }
+  .show-icon{
+    position: relative;
+  }
+.fa-eye{
+  position: absolute;
+  right: 0%;
+  top: 50px;
+}
+#password:focus + .show-icon::after{
+  display: block;
+  color: #ddd;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-btn {
+  margin: 20px 10px;
+  min-width: 200px;
+  font-size: 14px;
+  padding: 8px;
+  background: white;
+  border-radius: 2px;
+  border: 2px solid #ddd;
+  color: #3256a4;
+}
+.modal-btn:hover{
+  background: #3256a4;
+  color: white;
+}
+.modal-btn:disabled{
+  background-color: #f6f9fb;
+  color: #93a3b5;
+
+  
+}
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+body {
+  background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+  margin: 100px 0;
+  margin-bottom: 0px;
+  padding: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 50% ;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li  {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul  :hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+  cursor: pointer;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active  {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+input.invalid {
+  background-color: #ffdddd;
+
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 400px;
+  overflow-y: scroll;
+}
+.control-panel .nav-bar ul,.control-panel .action ul{
+  padding-top: 15px;
+}
+.modal-content{
+    padding: 30px;
+    background: white;
+
+  }
+  .modal-content button,.change-ticket-modal button{
+    padding: 10px;
+     background: var(--main);
+      color:white;
+      border: none;
+      border-radius: 2px;
+  }
+  .modal-content input{
+    height: 40px;
+    width:200px;
+  }

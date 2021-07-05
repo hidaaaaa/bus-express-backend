@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Some Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  
+    <!-- My own CSS -->
+    <link rel="stylesheet" type="text/css" href="/panel.css">
+    <link rel="stylesheet" type="text/css" href="glider.css">
+
+    <!-- Materialize Css -->
+      <!-- ...       -->
+
+     <script src="/owl.carousel.js"></script>
+     <script src="/admin/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+     <script src="https://unpkg.com/@glidejs/glide"></script>
+    <!-- Import font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+   <title>BusExpress| Tra cứu vé</title>
+  </head>
+  <body>
+<div class="container">
+    <% include ./partials/header %>
+  <div class="row profile">
+    <!-- <% include ./partials/mymessages %> -->
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <input type="text" id="search-ticketID" placeholder="Nhập mã vé">
+        <button id="lookup-ticket">Kiểm tra vé</button>
+        <p>Nếu bạn không thể tìm thấy vé qua hệ thống thì vui lòng liên hệ <strong>190015789</strong> để được trợ giúp</p>
+        <!-- END MENU -->
+      </div>
+    </div>
+     <div id="myModal" class="modal">
+    <!-- Modal content -->
+                <div class="modal-content">
+                  
+                 <form action="">
+                  <p>Bạn có thực sự muốn hủy vé ? Nếu có hãy điền số thông tin tài khoản vào bên dưới và ấn nút Xác nhận để bạn có thể nhận được tiền hoàn trả</p>
+                   <input type="text" placeholder="Nhập số tài khoản" id="credit">
+                   <button type="button" onclick="handleCancledTicket()">Xác nhận</button>
+                   <button type="button" id="close-modal">Hủy bỏ</button>
+                 </form>
+                </div>
+
+      </div>
+    <div class="col-md-9">
+          <div class="profile-content">
+             <p class="none"><i class="fas fa-search"></i>Vui lòng nhập mã vé để kiểm tra </p>
+              <div class="item">
+    <div class="item-right">
+      <h2 class="num">Bus</h2>
+      <p class="day">Express</p>
+    </div> <!-- end item-right -->
+    
+    <div class="item-left">
+      <p class="event">Thông tin vé xe</p>
+      <h2 class="title" style="margin-top:20px;">4545156115</h2>
+      
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p style="color: black; margin-right: 10px;" >Ngày đặt vé - <br/></p><p class="date"></p>
+      </div>
+      <div class="fix"></div>
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-ticket-alt"></i>
+        </div>
+        <p style="color: black; margin-right: 10px;" >Ghế ngồi - </p><p class="seatnum"> Party Number 16,20</p>
+      </div>
+      <div class="fix"></div>
+       <div class="sce">
+        <div class="icon">
+          <i class="fa fa-bus"></i>
+        </div>
+        <p style="color: black; margin-right: 10px;" >Mã chuyến xe - <br/></p><p class="busid"></p>
+      </div>
+      <div class="fix"></div>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p style="color: black; margin-right: 10px;" >Ngày đi - <br/></p><p class="datego"></p>
+      </div>
+      <div class="fix"></div>
+    </div> <!-- end item-right -->
+  </div> <!-- end item -->
+          </div>
+    </div>
+
+  </div>
+
+<!-- <center>
+<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
+</center> -->
+<br>
+<br>
+  
+
+<!-- profile-content -->
+   
+</div>
+ <% include ./partials/footer %>
+<link rel="stylesheet" href="/ticketinfo.css">
+<script >
+ 
+  let ticketInfo = `<table >
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Má vé</th>
+      <th scope="col">Mã chuyến</th>
+      <th scope="col">Số ghế</th>
+      <th scope="col">CMND</th>
+      <th scope="col">Đơn giá</th>
+      <th scope="col">Ngày đặt</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>`;
+     
+$(document).ready(function(){
+      
+  const checkTicket = document.querySelector('#lookup-ticket');
+  const searchticketID = document.querySelector('#search-ticketID')
+
+  checkTicket.addEventListener('click', async ()=>{
+     console.log(searchticketID.value)
+    const response =  await fetch(`http://localhost:5000/booking/ticket/${searchticketID.value}`)
+    const ticket = await response.json();
+    console.log(ticket)
+    if(ticket.length > 0){
+     
+      document.querySelector('.item').style.display = "block";
+      document.querySelector('.none').style.display = "none";
+
+      $('.title').html(ticket[0].MaVeXe)
+      $('.date').html(new Date(ticket[0].NgayDat).toLocaleDateString())
+      $('.seatnum').html(ticket[0].SoGhe)
+      $('.busid').html(ticket[0].MaCX)
+      $('.datego').html(new Date(ticket[0].NgayDi).toLocaleDateString())
+
+
+
+    }
+    else{
+      $('.none').html(`<i class="fas fa-exclamation-circle fa-1x" style="color:#f28d8d;"></i> Không tìm thấy mã vé phù hợp`);
+      document.querySelector('.none').style.display = "block";
+      document.querySelector('.item').style.display = "none";
+
+     
+    }
+  })
+
+})
+
+
+
+
+
+</script>
+
+  </body>
+
+
+</html>

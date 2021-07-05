@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+
+    <!-- Some Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+    <!-- My own CSS -->
+    <link rel="stylesheet" type="text/css" href="/panel.css">
+    <link rel="stylesheet" type="text/css" href="glider.css">
+
+     <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+
+
+     <script src="/owl.carousel.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+     <script src="https://unpkg.com/@glidejs/glide"></script>
+    <!-- Import font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+   <title>BusExpress| Tài khoản</title>
+  </head>
+  <body>
+<div class="container">
+    <% include ./partials/header %>
+  <div class="row profile">
+    <% include ./partials/mymessages %>
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img id="user-avt" src="<%= user.avt %>" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            <%= user.name %>
+          </div>
+          <div class="profile-usertitle-job">
+            <%= user.email %>
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR BUTTONS -->
+        <!-- <div class="profile-userbuttons">
+          <button type="button" class="btn btn-success btn-sm">Follow</button>
+          <button type="button" class="btn btn-danger btn-sm">Message</button>
+        </div> -->
+        <!-- END SIDEBAR BUTTONS -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li class="tab-change active" data-tab="password" id="change-password">
+             
+              <i class="fas fa-key"></i>
+              Thay đổi mật khẩu 
+            </li>
+            <li class="tab-change" data-tab="ticket"  id="change-ticket">
+             
+              <i class="fas fa-ticket-alt"></i>
+              Vé của tôi 
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+    <!-- MODAL SECTION -->
+     <div id="myModal" class="modal">
+    <!-- Modal content -->
+                <div class="modal-content">
+                  
+                 <form action="/user/cancel" method="post" enctype="formdata" id="form-cancle">
+                  <p>Bạn có thực sự muốn hủy vé ? Nếu có hãy điền số thông tin tài khoản vào bên dưới và ấn nút Xác nhận để bạn có thể nhận được tiền hoàn trả</p>
+                   <input type="text" name="credit" placeholder="Nhập số tài khoản" id="credit" class="input-cancle">
+                   <input type="hidden" name="ticketId" id="hidden-ticketId" value="">
+                   <button type="button" onclick="handleCancledTicket()" id="confirm-cancle">Xác nhận</button>
+                   <button type="button" id="close-modal">Hủy bỏ</button>
+                 </form>
+                </div>
+
+      </div>
+    <div id="myModal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content center">
+      <p><i class="fas fa-check-circle fa-1x" style="margin-right: 20px; color: green"></i>Bạn đã hủy vé thành công </p>
+    </div>
+
+  </div>
+    <!-- RIGHT WORKSPACE -->
+    <div class="col-md-9">
+            <div class="profile-content">
+              <div class="change-password-modal box show">
+                <h2 class="modal-tab">Thay đổi mật khẩu</h2>
+                  <section class="modal-body">
+                    <form class="modal-form form-pass"  action="/user/me/pass" method="POST">
+                      <div class="modal-form-group show-icon">
+                            <label for="new">Mật khẩu mới </label>
+                   <input type="password" name="new" value="" placeholder="Nhập mật khẩu mới" id="password" onkeyup="handleValid()"><span><i class="fas fa-eye"></i></span>
+                      </div>
+                            <div class="modal-form-group">
+                            <label for="old">Xác nhận mật khẩu cũ</label>
+                    <input type="password" name="old" value="" placeholder="Xác nhận mật khẩu" id="password2" >
+                      </div>
+                      <div class="modal-form-group">
+                        <span class="modal-hlp-txt">* Đăng nhập lại sau khi đổi mật khẩu thành công</span>
+                      </div>
+                    </form>
+                    <div class="password-guidelines">
+                      <div class="guidelines-description">
+                        <p class="pass-rule">Mật khẩu phải có ít nhất 6 ̉kí tự bao gồm chữ lần số</p>
+                        <p class="pass-rule">CMật khẩu phải có ít nhất 1 kí tự số</p> 
+                        <p class="pass-rule">Bao gồm ít nhất 1 kí tự đặc biệt (!@#$%^&*)</p>
+                        
+                      </div>
+                    </div>
+                  </section>
+                   
+
+                  <div class="modal-footer">
+                  <button class="modal-btn secondary-btn" id="saveResBtn" disabled>Lưu mật khẩu</button>
+                </div>
+              </div>
+           
+            <div class="change-ticket-modal box">
+
+            </div>
+          </div>
+    </div>
+
+  </div>
+
+<!-- <center>
+<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
+</center> -->
+<br>
+<br>
+  
+
+<!-- container -->
+<form action="/api/v1/user/avt" id="form-avatar" method="post" enctype="multipart/form-data">
+  <input type="file" id="file-avt" name="image" style="display: none;"><br><br>
+</form>
+   
+</div>
+<style>
+  #form-avatar{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+</style>
+ <% include ./partials/footer %>
+ <link rel="stylesheet" href="/account.css">
+ <script src="/validation.js"></script>
+<script src="/account.js" ></script>
+
+  </body>
+
+
+</html>
+
+
+

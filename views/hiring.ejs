@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <% include ./partials/links %>
+   
+
+   <title>BusExpress| Tuyển dụng</title>
+  </head>
+  <body>
+<div class="container">
+    <% include ./partials/header %>
+    <div class="poster-hiring">
+    </div>
+    <div class="job-description">
+      <div class="big">Theo dõi chúng tôi</div>
+      <div class="small">Để có thể trở thành tài xế của Bus Express</div>
+    </div>
+
+<!-- profile-content -->
+<% include ./partials/footer %>
+</div>
+ </body>
+<style>
+  .poster-hiring{
+    width: 100%;
+    margin-left: 0px;
+    height: 400px;
+    margin-top: 50px;
+    background:linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/images/background3.jpg");
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  }
+ 
+.job-description{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,0);
+  color: white;
+
+}
+.big{
+  font-size: 50px;
+ font-weight: bold;
+}
+.small{
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+</style>
+
+</html>

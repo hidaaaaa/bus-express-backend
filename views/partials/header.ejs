@@ -1,0 +1,85 @@
+
+ <div class="control-panel">
+   <header class="header">
+      <div class="logo-brand ">
+        <img src="https://livedemo00.template-help.com/wt_60033/images/logo-dark.png" width="80px" height="45px" onclick="window.location='/home'" style="cursor:pointer;"></img><span></span>
+      </div>
+      <div class="nav-bar center">
+         <ul>
+            <li class="center"><a href="/home">Trang chủ</a></li>
+            <li class="center"> <a href="/busexpress/trips">Thông tin tuyến xe</a></li>
+            <li class="center"><a href="/hiring">Thông tin uyển dụng</a></li>
+            <li class="center"><a href="/booking/tickets">Kiểm tra vé</a></li>
+          </ul>
+      </div>
+      <div class="action faded">
+        <% if(typeof user != 'undefined'){ %>
+         
+           <% if(user.role === 'admin'){ %>
+              <ul>
+                <!-- <li class="center" id="contact">Liên hệ</li> -->
+            <li class="center" id="contact" style="float:right;"><img src="https://storage.googleapis.com/fe-production/svgIcon/hotline-icon.svg" alt="hotline" width="18" height="18" style="width: 18px; margin-bottom: 2px; margin-right: 5px;">Hot line</li>
+              
+                  <div class="dropdown center">
+                    <a  class="dropbtn"><i class="fas fa-user fa-1x" style="color:black"></i></a>
+                    <div class="dropdown-content">
+                      <a href="/allusers">Quản lí hệ thống</a>
+                      <a href="/user/logout">Đăng xuất</a>
+                    </div>
+                  </div>
+                
+              </ul>
+         
+          <% } else{%>
+             <ul>
+              <!-- <li class="center" id="contact">Liên hệ</li> -->
+              <li class="center" id="contact" style="float:right;"><img src="https://storage.googleapis.com/fe-production/svgIcon/hotline-icon.svg" alt="hotline" width="18" height="18" style="width: 18px; margin-bottom: 2px; margin-right: 5px;">Hot line</li>
+            
+                <div class="dropdown center">
+                  <a  class="dropbtn" style="color: black;">
+                    <img src="<%= user.avt %>" width="30px" height="30px" alt="profile-img">
+                    <di class="user-display-name"><%= user.name %></di>
+                  </a>
+                  <div class="dropdown-content">
+                    <a href="/user/me">Đổi mật khẩu</a>
+                    <a href="/user/logout">Đăng xuất</a>
+                  </div>
+                </div>
+              
+            </ul>
+        <% }%>
+
+        <% } else{%>
+           <ul >
+            <li class="center" id="contact" style="float:right;"><img src="https://storage.googleapis.com/fe-production/svgIcon/hotline-icon.svg" alt="hotline" width="18" height="18" style="width: 18px; margin-bottom: 2px; margin-right: 5px;">Hot line</li>
+            <li class="center" id="sign-in"><a href="/user/account#dangnhap" >Đăng nhập</a></li>
+
+          </ul>
+        <% }%>
+      </div>
+    </header>
+  </div>
+  <script>
+    (async() => {
+      const displayName = document.querySelector('#sign-up')
+      const displayEmail = document.querySelector('#sign-in')
+      const baseURL = 'http://localhost:5000/api/v1/user/me'
+      fetch(baseURL)
+      .then(res =>{
+        if(res.status === 200)
+          return  {
+            display_name: 'zaytsev5',
+            email: 'shinminah357159'
+          } 
+        else return {
+          message: 'Unauthorized.'
+        }
+      })
+      .then(user =>{
+        console.log(user);
+        displayName.textContent = user.display_name
+        displayEmail.textContent = user.email
+      })
+      .catch(e => console.log(e.message))
+    })()
+  </script>

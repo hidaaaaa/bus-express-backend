@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+
+    <!-- Some Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- My own CSS -->
+    <link rel="stylesheet" type="text/css" href="/panel.css">
+    <link rel="stylesheet" type="text/css" href="glider.css">
+
+    <!-- Materialize Css -->
+      <!-- ...       -->
+
+     <script src="/owl.carousel.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+     <script src="https://unpkg.com/@glidejs/glide"></script>
+    <!-- Import font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+   <title>BusExpress| 404 page not found</title>
+  </head>
+  <body>
+<div class="container">
+    <% include ./partials/header %>
+    <div class="poster-hiring">
+      <button class="back-home" onclick="window.location = '/home' ">QUAY XE</button>
+    </div>
+<!-- profile-content -->
+<% include ./partials/footer %>
+</div>
+ </body>
+<style>
+  .poster-hiring{
+    width: 100%;
+    margin-left: 0px;
+    height: 700px;
+    margin-top: 50px;
+    background-image:url("/images/404.jpg");
+    background-position: center;
+   background-repeat: no-repeat;
+   /*background-size: contain; */
+  }
+  .control-panel .nav-bar ul,.control-panel .action ul{
+  padding-top: 15px;
+}
+.back-home{
+  position: absolute;
+  bottom:10%;
+  left: 50%;
+  transform: translate(-50%,0);
+  color: white;
+  background: #3256a4;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 15px 50px;
+  font-size: 20px;
+
+
+}
+
+</style>
+
+
+</html>

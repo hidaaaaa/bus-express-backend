@@ -1,0 +1,283 @@
+   
+
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+body {
+  background: #F1F3FA;
+}
+#lookup-ticket{
+  padding: 5px 10px;
+  color: #3256a4;
+  background: white;
+  border: 2px solid  #adadad;
+  font-weight: bold;
+  outline: none;
+}
+#lookup-ticket:hover{
+  background: #3256a4;
+  color: white;
+  border: 2px solid  #3256a4;
+}
+#search-ticketID{
+  width: 200px;
+  height: 30px;
+
+}
+.none{
+  margin-top: 100px;
+}
+/* Profile container */
+.profile {
+  margin: 100px 0;
+  margin-bottom: 0px;
+  padding: 0 50px;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px ;
+  background: #fff;
+}
+.profile-sidebar input,.profile-sidebar button{
+  margin-bottom: 10px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li  {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul  :hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+  cursor: pointer;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active  {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 350px;
+  text-align: center;
+  /*line-height: 400px;*/
+}
+.profile-content p{
+  font-size:18px;
+  color: #adadad;
+}
+.control-panel .nav-bar ul,.control-panel .action ul{
+  padding-top: 15px;
+}
+table{
+    text-align: center;
+    width:100%;
+    margin-bottom:50px;
+  /*  margin-left: 50%;
+    transform: translate(-50%,0);*/
+    border: none;
+  }
+  .thead-light{
+    background: var(--main);
+    border-radius: 2px;
+    color: white;
+
+  }
+  table th {
+    height: 30px;
+    text-align: center;
+  }
+  tbody tr:nth-child(odd){
+    background: #e0d8d7;
+  }
+  td button {
+    border: none;
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .modal-content{
+    padding: 30px;
+    background: white;
+
+  }
+  .modal-content button{
+    padding: 10px;
+     background: var(--main);
+      color:white;
+      border: none;
+      border-radius: 2px;
+  }
+  .modal-content input{
+    height: 40px;
+    width:200px;
+  }
+input:focus{
+   outline: none;
+  }
+  .profile-content .item {
+    display: none;
+  width: 70%;
+  padding: 0 0px;
+  background: #fff;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translate(-50%,0);
+  border:2px solid gray;
+  border-radius: 5px;
+}
+.profile-content .item-right, .profile-content .item-left {
+  float: left;
+  padding: 20px 
+}
+.profile-content .item-right {
+  padding: 30px 0px;
+  margin :0px;
+  width: 25%;
+  position: relative;
+  height: 300px;
+  background: #3256a4;
+}
+.profile-content .item-right .up-border, .profile-content .item-right .down-border {
+    padding: 14px 15px;
+    background-color: #ddd;
+    border-radius: 50%;
+    position: absolute
+}
+
+.profile-content .item-right .num {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+.profile-content .item-right .day, .profile-content .item-left .event {
+  color: #555;
+  font-size: 20px;
+  margin-bottom: 9px;
+}
+.profile-content .item-right .day {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+
+}
+.profile-content .item-left {
+  width: 71%;
+  border-left: 3px dotted #999;
+} 
+.profile-content .item-left .title {
+  color: #111;
+  font-size: 34px;
+  margin-bottom: 12px
+}
+.profile-content .item-left .sce {
+  margin-top: 5px;
+  display: block
+}
+.profile-content .item-left .sce .icon, .profile-content .item-left .sce p,
+.profile-content .item-left .loc .icon, .profile-content .item-left .loc p{
+    float: left;
+    color: #888;
+    margin-bottom: 10px;
+}
+.profile-content .item-left .sce .icon, .profile-content .item-left .loc .icon {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #3256a4;
+}
+.profile-content .item-left .loc {display: block}
+.fix {clear: both}
+.profile-content .item .tickets, .booked, .cancel{
+    color: #fff;
+    padding: 6px 14px;
+    float: right;
+    margin-top: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer
+}
+.profile-content .item .tickets {background: #777}
+.profile-content .item .booked {background: #3D71E9}
+.profile-content .item .cancel {background: #DF5454}
+.linethrough {text-decoration: line-through}

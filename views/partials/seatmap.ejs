@@ -1,0 +1,206 @@
+ <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content center">
+      <p class="modal-title"><i class="fas fa-exclamation-circle fa-1x" style="margin-right: 20px; color: #f55448"></i>Không tìm thấy chuyến phù hợp </p>
+    </div>
+
+  </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content1 center">
+      <p class="modal-title" id="email-modal"><i class="fas fa-exclamation-circle fa-1x" style="margin-right: 20px; color: #f55448"></i>Vui lòng chọn ghế khác</p>
+    </div>
+
+  </div>
+<header class="showcase step2 instep" >
+                    <div class="seat-map" id="changable">
+                      <div id="seat-map-columns">
+                        <button class="seat" id="A01">A01</button>
+                        <button class="seat" id="A02">A02</button>
+                        <button class="seat" id="A03">A03</button>
+                        <button class="seat" id="A04">A04</button>
+                        <button class="seat" id="A05">A05</button>
+                        <button class="seat" id="A06">A06</button>
+                        <button class="seat" id="A07">A07</button>
+                        <button class="seat" id="A08">A08</button>
+                        <button class="seat" id="A09">A09</button>
+                        <button class="seat" id="A10">A10</button>
+                      </div>
+                      <div id="seat-map-columns">
+                        <button class="seat" id="A11">A11</button>
+                        <button class="seat" id="A12">A12</button>
+                        <button class="seat" id="A13">A13</button>
+                        <button class="seat" id="A14">A14</button>
+                        <button class="seat" id="A15">A15</button>
+                        <button class="seat" id="A16">A16</button>
+                        <button class="seat" id="A17">A17</button>
+                        <button class="seat" id="A18">A18</button>
+                        <button class="seat" id="A19">A19</button>
+                        <button class="seat" id="A20">A20</button>
+                      </div>
+                      <div id="seat-map-columns">
+                        <button class="seat" id="A21">A21</button>
+                        <button class="seat" id="A22">A22</button>
+                        <button class="seat" id="A23">A23</button>
+                        <button class="seat" id="A24">A24</button>
+                        <button class="seat" id="A25">A25</button>
+                        <button class="seat" id="A26">A26</button>
+                        <button class="seat" id="A27">A27</button>
+                        <button class="seat" id="A28">A28</button>
+                        <button class="seat" id="A29">A29</button>
+                        <button class="seat" id="A30">A30</button>
+                        
+
+                      </div> 
+                    </div>
+                     <div class="guide">
+                        <div id="red"></div><span>Ghế đã đặt</span>
+                        <div id="main"></div><span>Ghế đang chọn</span>
+                        <div id="gray"></div><span>Ghế trống</span>
+
+                     </div>
+                       <a class="forward" id="move-to-3" href="#" data-target="step3">Tiếp tục</a>
+                       <div class="total-price">Tổng tiền</div>
+</header>
+                  
+                    
+
+
+                  <div class="passenger-info step3" >
+                    <p class="fill-out upper-case">Điền thông tin khách hành</p>
+                    <form id="form">
+                          <div class="input-box">
+                            <label class="input-label">Tên khách hàng</label>
+                            <input id="name" type="text"  value="<%= typeof userInfo != 'undefined' ? userInfo.TenKH : '' %>" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                          </div>
+                          <div class="input-box ">
+                            <label class="input-label">Email</label>
+                             <% if(typeof user != 'undefined' && user.role == "user"){ %>
+                           
+                               <input  id="email" type="text" value="<%= user.email %>" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+
+                            <% } else{%>
+
+                              <input  id="email" type="text" value="" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+
+                            <% }%>
+        
+                          </div>
+
+                          <div class="input-box ">
+                            <label class="input-label">Số điện thoại</label>
+                            <input  id="phone" type="text" value="<%= typeof userInfo != 'undefined' ? userInfo.SDT : '' %>" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                          </div>
+                        
+                          <!-- <div class="input-box">
+                            <label class="input-label">Giới tính</label>
+                            <input  id="gender" type="text" value="<%= typeof userInfo != 'undefined' ? userInfo.GioiTinh : '' %>" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                          </div> -->
+                          <div class="selectbox">
+                            <% if(typeof userInfo != 'undefined' && userInfo.gender == "Nam"){ %>
+                           
+                              <select name="" id="gender">
+                             
+                                <option value="Nam" selected>Nam</option>
+                              </select>
+                           <% } else if(typeof userInfo != 'undefined' && userInfo.gender == "Nữ"){%>
+
+                             
+                            <select name="" id="gender">
+                             
+                              <option value="Nữ" selected>Nữ</option>
+                            </select>
+
+                           <% }else{%>
+                            <select name="" id="gender">
+                                <option value="">Giới tính</option>
+                                <option value="Nam" >Nam</option>
+                                <option value="Nữ" >Nữ</option>
+                            </select>
+                            <%}%>
+                           </div>
+                          <div class="input-box">
+                            <label class="input-label">Địa chỉ</label>
+                            <input  id="address" type="text" value="<%= typeof userInfo != 'undefined' ? userInfo.DiaChi : '' %>" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                          </div>
+
+                          
+                          <div class="clear"></div>
+                    </form>
+                    <a class="btn prev-btn forward" href="#" data-target="step2">Quay lại</a>
+                    <a class="btn next-btn forward" href="#" data-target="step4">Tiếp tục</a>
+                   
+                     <div class="require">
+                      <p>* Hệ thống sẽ lấy thông tin của ở lần mua vé trước </p>
+                      <p>* Điền đúng và đầy đủ</p>
+                
+                    </div>
+                    
+
+                 </div>
+                 <div class="passenger-payment step4" >
+                   <img src="https://i.pinimg.com/originals/59/ae/9a/59ae9a5a3c2a8dd47db3b1fef3f59fdb.png" />
+                   <div class="check-box-payment">
+                      <label class="container">Thanh toán qua PayPal
+                        <input type="checkbox" checked="true" onclick="return this.checked= true">
+                        <span class="checkmark"></span>
+                      </label>
+                   </div>
+                    <div class="confirm-total-price">Số tiền</div>
+                    <a class="btn prev-to3-btn forward" href="#" data-target="step3">Quay lại</a>
+                    <button class="btn call-api" onclick="addCustomerAndTicket(event)">THANH TOÁN</button>
+                 </div>
+   
+
+<script>
+const name = document.querySelector('#name');
+const email = document.querySelector('#email');
+const phone = document.querySelector('#phone');
+const uid = document.querySelector('#uid');
+const gender = document.querySelector('#gender');
+const input = document.querySelectorAll('.input-box');
+
+console.log(input[0].getElementsByTagName('input')[0].value)
+
+if(input[0].getElementsByTagName('input')[0].value.length > 0){
+  
+  input.forEach((i) =>{
+      i.classList.add('active');
+      i.getElementsByTagName('input')[0].disabled = true;
+  })
+
+}
+if(input[1].getElementsByTagName('input')[0].value.length > 0){
+
+      input[1].classList.add('active');
+      input[1].getElementsByTagName('input')[0].disabled = true;
+  
+
+}
+
+
+
+function show(){
+    console.log("Asdadsa")
+}
+function setFocus(on) {
+  var element = document.activeElement;
+  if (on) {
+    setTimeout(function () {
+      element.parentNode.classList.add("focus");
+      element.classList.remove("invalid");
+
+    });
+  } else {
+    let box = document.querySelector(".input-box");
+    box.classList.remove("focus");
+    $("input").each(function () {
+      var $input = $(this);
+      var $parent = $input.closest(".input-box");
+      if ($input.val()) $parent.addClass("focus");
+      else $parent.removeClass("focus");
+    });
+  }
+}
+
+</script>

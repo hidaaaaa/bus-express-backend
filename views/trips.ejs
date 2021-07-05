@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+    <% include ./partials/links %>
+    
+   <title>BusExpress| Chuyến xe</title>
+  </head>
+  <body>
+<div class="container">
+    <% include ./partials/header %>
+<div class="group-table">
+   <p>Tuyến Sài Gòn <i class="fas fa-exchange-alt"></i> Kiên Giang<span><a class="a-buy" href="/mua-ve-tphcm-kiengiang">Mua vé</a></span></p>
+<table id="first" class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ĐIỂM XUẤT PHÁT</th>
+      <th scope="col">ĐIỂM ĐI</th>
+      <th scope="col">GIỜ ĐI</th>
+      <th scope="col">THỜI GIAN</th>
+      <th scope="col">GIÁ VÉ</th>
+     
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Sài Gòn</td>
+      <td>Kiên Giang</td>
+      <td>̉6h30</td>
+      <td>5 giờ</td>
+      <td>170000</td>
+    
+    </tr>
+    <tr>
+       <th scope="row">2</th>
+      <td>Sài Gòn</td>
+      <td>Kiên Giang</td>
+      <td>̉10:00</td>
+      <td>5 giờ</td>
+      <td>170000</td>
+     
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Kiên Giang</td>
+      <td>Sài Gòn</td>
+      <td>09:00</td>
+      <td>5 giờ</td>
+      <td>170000</td>
+    
+     
+
+    </tr>
+  </tbody>
+</table>
+ <p>Tuyến Sài Gòn <i class="fas fa-exchange-alt"></i> An Giang<span><a class="a-buy" href="/mua-ve-tphcm-angiang">Mua vé</a></span></p>
+<table id="first" class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ĐIỂM XUẤT PHÁT</th>
+      <th scope="col">ĐIỂM ĐI</th>
+      <th scope="col">GIỜ ĐI</th>
+      <th scope="col">THỜI GIAN</th>
+      <th scope="col">GIÁ VÉ</th>
+  
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Sài Gòn</td>
+      <td>An Giang</td>
+      <td>̉7h30</td>
+      <td>6 giờ</td>
+      <td>190000</td>
+     
+    </tr>
+    <tr>
+       <th scope="row">2</th>
+      <td>Sài Gòn</td>
+      <td>An Giang</td>
+      <td>̉15:00</td>
+      <td>6 giờ</td>
+      <td>170000</td>
+ 
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>An Giang</td>
+      <td>Sài Gòn</td>
+      <td>09:00</td>
+      <td>6 giờ</td>
+      <td>190000</td>
+
+
+    </tr>
+  </tbody>
+</table>
+ <p>Tuyến Sài Gòn <i class="fas fa-exchange-alt"></i> Tiền Giang <span><a class="a-buy" href="/mua-ve-tphcm-tiengiang">Mua vé</a></span></p>
+<table id="first" class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ĐIỂM XUẤT PHÁT</th>
+      <th scope="col">ĐIỂM ĐI</th>
+      <th scope="col">GIỜ ĐI</th>
+      <th scope="col">THỜI GIAN</th>
+      <th scope="col">GIÁ VÉ</th>
+ 
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Sài Gòn</td>
+      <td>Kiên Giang</td>
+      <td>̉6h30</td>
+      <td>5 giờ</td>
+      <td>170000</td>
+     
+
+    </tr>
+    <tr>
+       <th scope="row">2</th>
+      <td>Sài Gòn</td>
+      <td>Kiên Giang</td>
+      <td>̉10:00</td>
+      <td>5 giờ</td>
+      <td>170000</td>
+    
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Kiên Giang</td>
+      <td>Sài Gòn</td>
+      <td>09:00</td>
+      <td>5 giờ</td>
+      <td>170000</td>
+      
+
+    </tr>
+  </tbody>
+</table>
+</div> 
+<% include ./partials/footer %>
+<style>
+  :root {
+  --main:#f0e319;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+.group-table{
+  margin-top: 100px;
+  text-align: center;
+}
+.group-table p{
+  font-size: 23px;
+}
+  table{
+    text-align: center;
+    width:80%;
+    margin-bottom:50px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    border: none;
+  }
+  .thead-light{
+    background: #3256a4;
+    border-radius: 2px;
+    color: white;
+
+  }
+  table th {
+    height: 30px;
+  }
+  tbody tr:nth-child(odd){
+    background: #e0d8d7;
+  }
+  .a-buy {
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 2px;
+    background: var(--main);
+    cursor: pointer;
+    font-size: 19px;
+    margin-left: 10px;
+    color: black;
+  }
+  .button-buy{
+    background: white;
+    text-align: left;
+  }
+</style>
+<script type="text/javascript">
+  let trips;
+  getTrips()
+  async function  getTrips(){
+    const response = await fetch('http://localhost:5000/admin/trips');
+    const myJson = await response.json();
+    trips = myJson;
+}
+$('#contact').click(()=>{
+  window.scrollTo({
+    top:$('.container').height(),
+    behavior: 'smooth'
+  })
+})
+</script>
+
+  </body>
+
+
+</html>

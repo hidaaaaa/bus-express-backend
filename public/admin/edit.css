@@ -1,0 +1,66 @@
+.panel-chosetable{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 1070px;
+	height: 100px;
+	top:70px;
+	left: 10px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	padding: 30px;
+	font-size: 20px;
+}
+.item-chose-table{
+	background-color:white;
+	width: 170px;
+	text-align: center;
+	height: 40px;
+	line-height: 37px;
+	color:black;
+}
+.item-chose-table-active{
+	background-color:#3256a4;
+	width: 170px;
+	text-align: center;
+	height: 40px;
+	line-height: 37px;
+	color: white;
+}
+.item-chose-table:hover,.item-chose-task:hover{
+	background-color:#F6F6F6;
+}
+.panel-insert{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 1070px;
+	height: 400px;
+	top:180px;
+	left: 10px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+    padding: 20px;
+    font-size: 20px;
+  
+}
+.div-table{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 1070px;
+	height: 800px;
+	top:590px;
+	left: 10px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+    padding: 50px;
+    font-size: 20px;
+}
+.divtable{
+	overflow: auto;
+}
+.btn{
+    width: 100px;
+    border-radius: 0;
+}
+.onRow:hover{
+	background-color: #E4E4E4;
+}

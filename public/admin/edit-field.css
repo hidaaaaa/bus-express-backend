@@ -1,0 +1,339 @@
+@charset "utf-8";
+/* CSS Document */
+.panel-chosetask{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 100px;
+	top:100px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+	font-size: 13px;
+}
+#title-panel-chosetask{
+	height: 40px;
+	text-align: center;
+	width: 200px;
+	position: absolute;
+	z-index: 3;
+	background-color:#3256a4;
+	top: 76px;
+	left: 60px;
+	font-size: 20px;
+	color: white;
+	justify-content: center;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	line-height: 38px;	
+}
+.panel-chosetable{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 100px;
+	top:100px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+	font-size: 13px;
+}
+.item-chose-table{
+	background-color: #969696;
+	width: 70px;
+	text-align: center;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+}
+.item-chose-task{
+	background-color: #969696;
+	width: 100px;
+	text-align: center;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+}
+.item-chose-table:hover,.item-chose-task:hover{
+	background-color: #AAAAAA;
+}
+.panel-insert-benxe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 350px;
+	top:250px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.panel-insert-xe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 350px;
+	top:250px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.panel-insert-tuyenxe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 350px;
+	top:250px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.panel-insert-chuyenxe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 350px;
+	top:250px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.panel-insert-khachhang{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 350px;
+	top:250px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.panel-insert-huyve{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 350px;
+	top:250px;
+	left: 30px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.div-table-benxe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top:100px;
+	left: 580px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.div-table-xe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top:100px;
+	left: 580px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.div-table-tuyenxe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top:100px;
+	left: 580px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.divtable{
+	overflow: auto;
+}
+
+.div-table-chuyenxe{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top:100px;
+	left: 580px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.div-table-khachhang{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top:100px;
+	left: 580px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+}
+.div-table-huyve{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top:100px;
+	left: 580px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	padding: 30px;
+	
+}
+#title-panel-chosetable{
+	height: 40px;
+	text-align: center;
+	width: 200px;
+	position: absolute;
+	z-index: 3;
+	background-color:#3256a4;
+	top: 76px;
+	left: 60px;
+	font-size: 20px;
+	color: white;
+	justify-content: center;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	line-height: 38px;	
+}
+#title-panel-insert{
+	height: 40px;
+	text-align: center;
+	width: 200px;
+	position: absolute;
+	z-index: 3;
+	background-color:#3256a4;
+	top: 226px;
+	left: 60px;
+	font-size: 20px;
+	color: white;
+	justify-content: center;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	line-height: 38px;	
+}
+#title-table-data{
+	height: 40px;
+	text-align: center;
+	width: 200px;
+	position: absolute;
+	z-index: 3;
+	background-color:#3256a4;
+	top: 76px;
+	left: 610px;
+	font-size: 20px;
+	color: white;
+	justify-content: center;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	border-radius: 5px;
+	line-height: 38px;
+}
+#drop-table{
+	font-size: 20px;
+	text-align: center;
+	line-height: 30px;
+	height: 40px;
+	width: 300px;
+	position: absolute;
+	z-index: 3;
+	top: 35px;
+	left: 150px;
+}
+#bang{
+	font-size: 20px;
+	text-align: center;
+	line-height: 30px;
+	height: 40px;
+	width: 70px;
+	position: absolute;
+	z-index: 3;
+	top: 35px;
+	left: 20px;
+}
+#div-button{
+	position: absolute;
+	z-index: 2;
+	top: 620px;
+	left: 30px;
+	width: 1050px;
+	height: 80px;
+	border: none;
+	border-radius: 5px;
+	box-shadow:10px 10px 10px rgba(0, 0, 0, 0.075);
+	background-color: white;
+}
+.button-insert{
+	position: absolute;
+	z-index: 3;
+	top: 10px;
+	left: 100px;
+	border: none;
+	border-radius: 5px;
+	background-color: #616161;
+	color: white;
+	height: 60px;
+	width: 200px;
+}
+.button-update{
+	position: absolute;
+	z-index: 3;
+	top: 10px;
+	left: 400px;
+	border: none;
+	border-radius: 5px;
+	background-color: #616161;
+	color: white;
+	height: 60px;
+	width: 200px;
+}
+.button-delete{
+	position: absolute;
+	z-index: 3;
+	top: 10px;
+	left: 700px;
+	border: none;
+	border-radius: 5px;
+	background-color: #616161;
+	color: white;
+	height: 60px;
+	width: 200px;
+}
+.button-insert:hover{
+	background-color: #33FF3E;
+}
+.button-update:hover{
+	background-color: #00ACE0;
+}
+.button-delete:hover{
+	background-color: #FA2F33;
+}

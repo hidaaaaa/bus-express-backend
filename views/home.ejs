@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Flatpickr CSS-->
+   
+    <% include ./partials/links %>
+
+   <title>BusExpress| Trang chủ</title>
+  </head>
+  <body>
+<div class="container">
+    <% include ./partials/header %>
+
+  <div class="search-box center">
+    <div class="title">
+      <p class="left" onclick="moveLeft()"><i class="fas fa-chevron-left"></i></p>
+      <p class="right" onclick="moveRight()"><i class="fas fa-chevron-right"></i></p>
+
+      <p>Thuận tiện và </p>
+      <p>Phong cách</p>
+      <small>Heaven never knows where you've been I dont wanna need to know i dont</small>
+      
+    </div>
+    <div class="search">
+      <div class="select">
+         <select name="format" id="source">
+            <option selected disabled >Chọn địa điểm đi</option>
+            <option value="TPHCM">TPHCM</option>
+            <option value="KienGiang">Kiên Giang</option>
+            <option value="AnGiang">An Giang</option>
+            <option value="TienGiang">Tiền Giang</option>
+           
+         </select>
+      </div>
+       <div class="select">
+         <select name="format" id="destination">
+            <option selected disabled>Chọn địa điểm đến</option>
+            <option value="TPHCM">TPHCM</option>
+            <option value="KienGiang">Kiên Giang</option>
+            <option value="AnGiang">An Giang</option>
+            <option value="TienGiang">Tiền Giang</option>
+         </select>
+
+      </div>
+      <div class="date-picker">
+        <input type="text" id="basicDate" placeholder="Ngày di chuyển" class="center" data-input>
+      </div>
+      <div class="search-btn center">
+          <button type="submit" class="find-post upper-case " id="findBtn"><i class="fas fa-search" style="margin-right:15px;"></i>TÌM VÉ</button>
+      </div>
+     <!--  <input type="text" placeholder="  Địa điểm đến">
+      <input type="text" id="basicDate" placeholder="  Ngày di chuyển" data-input>
+      <button type="submit" class="find-post upper-case"><i class="fas fa-search"></i>TÌM VdÉ</button>
+       -->
+
+    </div>
+
+  </div>
+  <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p><i class="fas fa-exclamation-circle fa-1x" style="margin-right: 20px; color: #f55448"></i>Không có chuyến xe phù hợp</p>
+  </div>
+
+</div>
+
+<div class="content">
+  <p style="font-size: 25px;stroke: 15;">Bến xe khách lớn</p>
+
+  <div class="bus-station">
+      <div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+
+        <li class="glide__slide">   
+          <img src="https://www.dalattrip.com/media/2012/10/Dalat-Bus-Station.jpg" width="300px" height="300px" />
+        </li>
+
+        <li class="glide__slide">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/db/2c/d2/b-n-xe-mi-n-dong-tren.jpg"/>
+        </li>
+
+        <li class="glide__slide">
+          <img src="https://www.dalattrip.com/media/2012/10/Dalat-Bus-Station.jpg" width="300px" height="300px" />
+        </li>
+
+        <li class="glide__slide"> 
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/db/2c/d2/b-n-xe-mi-n-dong-tren.jpg"/>
+        </li>
+
+        <li class="glide__slide"> 
+          <img src="/images/westside.png"/>
+        </li>
+    </ul>
+  </div>
+  <div class="glide__track" data-glide-el="track">...</div>
+
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div>
+     
+  </div>
+  <div class="about-us">
+    <p style="font-size: 25px;stroke: 15;">Hệ thống đặt vé online tiện lợi, nhanh chóng</p>
+    <div class="user-advantage center">
+        <div class="card card-info">
+          <i class="fas fa-wifi fa-3x gray"></i>
+          <div class="content">Miễn phí wifi</div>
+          <p>Đồng hành chuyến đi cùng với bạn</p>
+        </div>
+        <div class="card card-info">
+          <i class="fas fa-bus fa-3x gray"></i>
+          <div class="content">Miễn phí trung chuyển</div>
+          <p>Đón khách ngay tại gia</p>
+        </div>
+        <div class="card card-info">
+          <i class="fas fa-bed fa-3x gray"></i>
+          <div class="content">Giường nằm thỏa mái</div>
+          <p>Cảm giác dể chịu, thóa mái khi nằm nhiều giờ đồng hồ</p>
+        </div>
+        <div class="card card-info">
+          <i class="fas fa-ticket-alt fa-3x gray"></i>
+          <div class="content">Dễ dàng có vẻ</div>
+          <p>Mua vé thông qua đại lí hoặc hệ thống</p>
+        </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+<style>
+ 
+
+.glide__slide{
+  
+  text-align: center;
+  width: 240px;
+  border-radius: 2px;
+  
+}
+
+.glide__slide img{
+  width: 240px;
+  height:180px;
+  padding: 0;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  
+}
+button.glide__arrow {
+  /*background-color: green;*/
+  border: none;
+  font-size: 11px;
+}
+button.glide__arrow--left {
+  left: 5px;
+  background: #f9f9f9;
+  color: black;
+}
+button.glide__arrow--right {
+  right: 5px;
+  background: #f1f1f1;
+  color: black;
+
+
+}
+</style>
+
+    <% include ./partials/footer %>
+ 
+<script >
+  $(document).ready(function(){
+    var ga = document.createElement('script')
+    ga.type ='text/javascript'
+    ga.src = 'home.js'
+    ga.id = 'invisible'
+    document.body.appendChild(ga);
+    $('#invisible').remove();
+
+  })
+
+
+</script>
+<script>
+//  async function api(){
+//   const response = await fetch('http://localhost:5000/api/v1/user/me')
+// const result = await response.json()
+// console.log(result)
+//  }
+//  api()
+  var jsTags = document.querySelectorAll('script')
+  jsTags[jsTags.length - 2].parentNode.removeChild(jsTags[jsTags.length - 2])
+ 
+  const firstSlogan = `<p class="left" onclick="moveLeft()"><i class="fas fa-chevron-left"></i></p>
+      <p class="right" onclick="moveRight()"><i class="fas fa-chevron-right"></i></p>
+
+      <p>Thuận tiện và </p>
+      <p>Phong cách</p>
+      <small>Heaven never knows where you've been I dont wanna need to know i dont</small>`;
+  const secondSlogan = `<p class="left" onclick="moveLeft()"><i class="fas fa-chevron-left"></i></p>
+      <p class="right" onclick="moveRight()"><i class="fas fa-chevron-right"></i></p>
+
+      <p>An toàn và </p>
+      <p>Nhanh chóng</p>
+      <small>Heaven never knows where you've been I dont wanna need to know i dont</small>`
+  let rightClick = document.querySelector('.right')
+  const leftClick = document.querySelector('.left')
+
+ function moveRight(){
+    //  document.querySelector('.title').style.display = "none"
+      $('.title').fadeOut(500,function(){
+        $(this).html(secondSlogan).fadeIn(500);
+        $('.search-box').css('background',`linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/images/background2.jpg")`)
+        $('.search-box').css('backgroundPostiton','center')
+        $('.search-box').css('backgroundSize','cover')
+
+      })
+  }
+
+ function moveLeft(){
+    console.log('clik')
+    //  document.querySelector('.title').style.display = "none"
+      $('.title').fadeOut(500,function(){
+        $(this).html(firstSlogan).fadeIn(500);
+        $('.search-box').css('background',`linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/images/background1.jpg")`)
+          $('.search-box').css('backgroundPostiton','center')
+        $('.search-box').css('backgroundSize','cover')
+      })
+  }
+</script>
+
+  </body>
+
+
+
+</html>

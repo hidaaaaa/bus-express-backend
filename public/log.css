@@ -1,0 +1,253 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+   
+    body{
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+
+    }
+    .container{
+      
+    }
+    h1{
+      margin-bottom:20px;
+      color:var(--main);
+    }
+    .form-login,.form-register{
+      display:none;
+    }
+    .active{
+      display:grid;
+      animation: fadein 0.5s;
+    }
+    .img-bg{
+      grid-area: fside;
+      width: 100%;
+      height: 100%;
+    }
+    .form-col2{
+      grid-area: mside;
+      padding: 10px 30px;
+    }
+     input{
+      width: 70%;
+      height: 25px;
+      border:none;
+      border-bottom: 1px solid #d1d5da;
+      font-family: 'Roboto', sans-serif;
+      height:3em;
+    }
+    .form{
+      padding:20px 0;
+    }
+    .form-register{
+      width:70%;
+      height:400px;
+      margin-left:50%;
+      transform:translate(-50%,0);
+      border-radius:10px;
+      border: 1px solid #d1d5da;
+      background: #ffffff;
+      /*display: grid;*/
+      grid-auto-columns: 30% 50% 20%;
+     grid-template-areas:
+    ' fside mside rside';
+    grid-gap: 0;
+      padding:0;
+   
+      
+     
+
+    }
+    .form-login{
+      width:25%;
+      height:250px;
+      margin-left:50%;
+      transform:translate(-50%,0);
+      border-radius:7x;
+      border: 1px solid #d1d5da;
+      background: #ffffff;
+      border-radius: 2px;
+
+    }
+
+    .password-guidelines{
+      /*position: absolute;
+      float: right;
+      right: 25%;*/
+    
+      text-align: left;
+      padding: 0px 7px;
+      background: #ffffff;
+      grid-area: rside;
+
+    }
+    .guidelines-header{
+      font-size: 17px;
+      font-weight: 400;
+    }
+    .guidelines-header .pass-rule{
+      color: gray;
+    }
+    form .form-group{
+      padding: 0;
+      padding-bottom :20px;
+    }
+    #form-control{
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1{
+      text-align: center;
+    }
+
+    .button-log{
+      width: 60%;
+      height: 40px;
+      border: 2px solid #adadad;
+      color:#3256a4;
+      background: none;
+      border-radius: 0px;
+      font-weight: 500;
+
+
+    }
+    .button-log:disabled{
+      background: #ffffff;
+    }
+    .button-log:hover{
+      color: white;
+      background: #3256a4;
+      border: none;
+
+    }
+    @keyframes fadein {
+      0%{
+        opacity: 0;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      100%{
+        opacity: 1;
+      }
+}
+
+/* Buttons */
+
+
+#form {
+  margin: 0 10px;
+}
+
+.input-box.active-grey .input-1 {
+  border: 1px solid var(--main);
+}
+.input-box.active-grey .input-label {
+  color: #80868b;
+  top: -8px;
+  background: #fff;
+  font-size: 11px;
+  transition: 250ms;
+}
+.input-box.active-grey .input-label svg {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  top: 2px;
+  transition: 250ms;
+}
+
+.input-box {
+  position: relative;
+  margin: 10px 0;
+}
+.input-box .input-label {
+  position: absolute;
+  color: #80868b;
+  font-size: 15px;
+  font-weight: 400;
+  max-width: calc(100% - (2 * 8px));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 8px;
+  top: 13px;
+  padding: 0 8px;
+  transition: 250ms;
+  user-select: none;
+  pointer-events: none;
+}
+.input-box .input-label svg {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  top: 2px;
+  transition: 250ms;
+}
+.input-box .input-1 {
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  color: #202124;
+  border: 1px solid #dadce0;
+  padding: 13px 15px;
+  transition: 250ms;
+  margin-bottom: 10px;
+}
+.input-box .input-1:focus {
+  outline: none;
+  border: 2px solid #3256a4;
+  transition: 250ms;
+}
+
+.input-box.focus .input-label,
+.input-box.active .input-label {
+  color: #3256a4;
+  top: -8px;
+  background: #fff;
+  font-size: 11px;
+  transition: 250ms;
+}
+.input-box.focus .input-label svg,
+.input-box.active .input-label svg {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  top: 2px;
+  transition: 250ms;
+}
+
+.input-box.active .input-1 {
+  border: 2px solid #1a73e8;
+}
+
+
+.btn:hover {
+  background: var(--main);
+  transition: 250ms;
+}
+.btn:focus {
+  outline: none;
+}
+
+.btn-primary {
+  background: #1a73e8;
+  color: #fff;
+  transition: 250ms;
+}
+.btn-primary:hover {
+  background: #287ae6;
+  box-shadow: 0 1px 1px 0 rgba(66, 133, 244, 0.45), 0 1px 3px 1px rgba(66, 133, 244, 0.3);
+  transition: 250ms;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
