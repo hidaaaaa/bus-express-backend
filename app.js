@@ -1,17 +1,20 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const passport = require('passport');
-const flash = require('connect-flash');
-const session = require('express-session');
+const express = require("express");
+const mongoose = require("mongoose");
+const passport = require("passport");
+const flash = require("connect-flash");
+const session = require("express-session");
 const app = express();
-const path = require('path')
-const favicon = require('serve-favicon')
-const { ensureAuthenticated, forwardAuthenticated ,ensureAuthenticatedForAdmin} = require('./config/auth');
+const path = require("path");
+const favicon = require("serve-favicon");
+const {
+	ensureAuthenticated,
+	forwardAuthenticated,
+	ensureAuthenticatedForAdmin,
+} = require("./config/auth");
 
-
-const errorHandler = require('./api/v1/helpers/error-handler')
-const routeAdmin = require('./routes/admin.route/index')
-const routeUser = require('./routes/user.route')
+const errorHandler = require("./api/v1/helpers/error-handler");
+const routeAdmin = require("./routes/admin.route/index");
+const routeUser = require("./routes/user.route");
 
 const API_BenXe = require("./routes/admin.route/benxeRoutes");
 const API_Xe = require("./routes/admin.route/xeRoutes");
@@ -22,39 +25,35 @@ const API_ChiTietVeXe = require("./routes/admin.route/chitietvexeRoutes");
 const API_ChiTietVeXeHuy = require("./routes/admin.route/chitietvexehuyRoute");
 const API_HoaDon = require("./routes/admin.route/hoadonRoutes");
 //const routesTaiKhoan = require('./routesAdmin/taikhoanRoutes');
-const API_User = require("./routes/admin.route/userRoutes")
+const API_User = require("./routes/admin.route/userRoutes");
 
+const db = require("./config/mongodb.key").mongoURI;
 
-
-const db = require('./config/mongodb.key').mongoURI;
-  
-app.use(express.json())
+app.use(express.json());
 app.use(
-  session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-  })
+	session({
+		secret: "secret",
+		resave: true,
+		saveUninitialized: true,
+	})
 );
 // EJS
-app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'ejs');
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico')))
-
+app.use(express.static(__dirname + "/public"));
+app.set("view engine", "ejs");
+app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
 // Express session
 app.use(
-  session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-  })
+	session({
+		secret: "secret",
+		resave: true,
+		saveUninitialized: true,
+	})
 );
-app.use(errorHandler)
-// app.use(require('cors')())
-
+app.use(errorHandler);
+app.use(require("cors")());
 
 // Passport middleware
 app.use(passport.initialize());
@@ -63,35 +62,28 @@ app.use(passport.session());
 // Connect flash
 app.use(flash());
 
-
-
 // Global constiables
 
-app.use(function(req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  next();
+app.use(function (req, res, next) {
+	res.locals.success_msg = req.flash("success_msg");
+	res.locals.error_msg = req.flash("error_msg");
+	res.locals.error = req.flash("error");
+	next();
 });
 
 //connecting MongoDB
 mongoose
-.connect(
-  db,
-  { useNewUrlParser:true,useUnifiedTopology: true},
-  
-  )
-  .then(() => console.log('[⚡️] - MongoDB Connected'))
-  .catch(err => console.log(err));
+	.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+	.then(() => console.log("[⚡️] - MongoDB Connected"))
+	.catch((err) => console.log(err));
 
 // Routes User
-app.use('/api/v1',require('./api/v1/'))
+app.use("/api/v1", require("./api/v1/"));
 // app.use('/api/v1/admin',require('./api/v1/routes/admin'))
-app.use('/', require('./routes/index.js'));
-app.use('/user', routeUser);
-app.use('/admin',routeAdmin);
-app.use('/static', express.static(path.join(__dirname, 'public')))
-
+app.use("/", require("./routes/index.js"));
+app.use("/user", routeUser);
+app.use("/admin", routeAdmin);
+app.use("/static", express.static(path.join(__dirname, "public")));
 
 //Route Admin
 // app.get("/allusers",ensureAuthenticatedForAdmin,function(req,res){
@@ -158,4 +150,3 @@ API_User(app);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`[⚡️] - App ready on port ${PORT}`));
-
