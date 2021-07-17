@@ -3,10 +3,10 @@ const VeXe = require('../modelsAdmin/chitietvexeModels');
 
 //MySql config
 const mysqlDB = mysql.createConnection({
-  host: 'sql5.freesqldatabase.com',
-  user: 'sql5423057',
-  password: 'mnbijL5xkr',
-  database: 'sql5423057'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'final_booking_system'
 }
   )
 

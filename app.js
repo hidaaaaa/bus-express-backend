@@ -53,7 +53,7 @@ app.use(
   })
 );
 app.use(errorHandler)
-app.use(require('cors')())
+// app.use(require('cors')())
 
 
 // Passport middleware

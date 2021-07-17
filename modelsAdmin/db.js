@@ -4,10 +4,10 @@ var mysql = require('mysql');
 
 //local mysql db connection
 var connection = mysql.createConnection({
-host: 'sql5.freesqldatabase.com	',
-  user: 'sql5423057',
-  password: 'mnbijL5xkr',
-  database: 'sql5423057'
+host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'final_booking_system'
 });
 // connect to database
 connection.connect(function(err) {

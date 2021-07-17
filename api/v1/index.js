@@ -306,7 +306,7 @@ router.post('/m/forgot',async (req,res) =>{
         secure: false, // true for 465, false for other ports
         auth: {
             user: 'shinminah357159@gmail.com', // generated ethereal user
-            pass: 'Zaytsev5'  // generated ethereal password
+            pass: 'zaytsev@5'  // generated ethereal password
         },
         tls:{
           rejectUnauthorized:false
