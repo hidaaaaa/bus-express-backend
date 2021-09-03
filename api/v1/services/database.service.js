@@ -3,10 +3,10 @@ const mysql = require("mysql");
 
 //MySql config
 const mysqlDB = mysql.createConnection({
-	host: "sql5.freesqldatabase.com",
-	user: "sql5423057",
-	password: "mnbijL5xkr",
-	database: "sql5423057",
+	host: "localhost",
+	user: "root",
+	password: "",
+	database: "final_booking_system",
 });
 
 mysqlDB.connect(function (err) {
@@ -49,18 +49,134 @@ module.exports = {
 		let query = "select * from users where email = ?";
 		mysqlDB.query(query, email);
 	},
+	// addOne: function (val1, val2, val3, callback) {
+	// 	let bind = [];
+	// 	bind.push(val1);
+	// 	bind.push(val2);
+	// 	bind.push(val3);
+	// 	let query =
+	// 		"INSERT INTO `xe`(`BienSoXe`, `LoaiXe`, `SoChoNgoi`, `MaBX`) VALUES (?,?,30,?)";
+	// 	mysqlDB.query(query, bind, (err, result) => {
+	// 		if (err) return callback({ isAdded: false });
+	// 		callback({ isAdded: true });
+	// 	});
+	// },
+
 	addOne: function (val1, val2, val3, callback) {
+		console.log(val1, val2, val3);
 		let bind = [];
 		bind.push(val1);
 		bind.push(val2);
 		bind.push(val3);
 		let query =
-			"INSERT INTO `xe`(`BienSoXe`, `LoaiXe`, `SoChoNgoi`, `MaBX`) VALUES (?,?,30,?)";
+			"INSERT INTO `xe`(`BienSoXe`, `LoaiXe`, `SoLuongGhe`) VALUES (?,?,?)";
 		mysqlDB.query(query, bind, (err, result) => {
-			if (err) return callback({ isAdded: false });
+			if (err) {
+				console.log(err);
+				return callback({ isAdded: false });
+			}
 			callback({ isAdded: true });
 		});
 	},
+
+	updateBus: function (val1, val2, val3, callback) {
+		console.log(val1, typeof val2);
+		let bind = [];
+		bind.push(val1);
+		bind.push(val2);
+		bind.push(val3);
+		let query = "UPDATE  xe set LoaiXe = ?, SoLuongGhe = ? where BienSoXe = ?";
+		mysqlDB.query(query, bind, (err, result) => {
+			if (err) {
+				console.log(err);
+				return callback({ isAdded: false });
+			}
+			callback({ isAdded: true });
+		});
+	},
+
+	addTrip: function (val1, val2, val3, val4, callback) {
+		console.log(val1, val2, val3, val4);
+		let bind = [];
+		bind.push(val1);
+		bind.push(val2);
+		bind.push(val3);
+		bind.push(val4);
+		let query =
+			"INSERT INTO `tuyenxe`(`MaTX`, `DiemDi`, `DiemDen`, `DonGia`) VALUES (?,?,?,?)";
+		mysqlDB.query(query, bind, (err, result) => {
+			if (err) {
+				console.log(err);
+				return callback({ isAdded: false });
+			}
+			callback({ isAdded: true });
+		});
+	},
+
+	updateTrip: function (val1, val2, val3, val4, callback) {
+		console.log(val1, val2, val3, val4);
+		let bind = [];
+		bind.push(val1);
+		bind.push(val2);
+		bind.push(val3);
+		bind.push(val4);
+		let query =
+			"update `tuyenxe` set `DiemDi` = ?, `DiemDen` = ?, `DonGia` = ? where `MaTX` = ?";
+		mysqlDB.query(query, bind, (err, result) => {
+			if (err) {
+				console.log(err);
+				return callback({ isAdded: false });
+			}
+			callback({ isAdded: true });
+		});
+	},
+
+	addPost: function (val1, val2, val3, val4, val5, callback) {
+		console.log(val1, val2, val3, val4, val5);
+		let bind = [];
+		bind.push(val1);
+		bind.push(val2);
+		bind.push(val3);
+		bind.push(val4);
+		bind.push(val5);
+		let query =
+			"INSERT INTO `chuyenxe`(`MaCX`, `MaTX`, `BienSoXe`, `NgayDi`, `GioDi`) VALUES (?,?,?,?,?)";
+		mysqlDB.query(query, bind, (err, result) => {
+			if (err) {
+				console.log(err);
+				return callback({ isAdded: false });
+			}
+			callback({ isAdded: true });
+		});
+	},
+
+	updatePost: function (val1, val2, val3, val4, val5, callback) {
+		console.log(val1, val2, val3, val4, val5);
+		let bind = [];
+		bind.push(val1);
+		bind.push(val2);
+		bind.push(val3);
+		bind.push(val4);
+		bind.push(val5);
+		let query =
+			"update `chuyenxe` set `MaTX` = ?, `BienSoXe` = ?, `NgayDi` = ?, `GioDi` = ? where `MaCX` = ?";
+		mysqlDB.query(query, bind, (err, result) => {
+			if (err) {
+				console.log(err);
+				return callback({ isAdded: false });
+			}
+			callback({ isAdded: true });
+		});
+	},
+
+	getAllTicket: function (callback) {
+		let query = "select * from vexe ";
+		mysqlDB.query(query, (err, result) => {
+			if (err) return console.log(err);
+			callback(result);
+		});
+	},
+
 	getPostByDateTime: function (trip, date, time, callback) {
 		let query =
 			"select * from vexe where vexe.MaCX = (select chuyenxe.MaCX from chuyenxe where chuyenxe.MaTX =? and chuyenxe.NgayDi=? and chuyenxe.GioDi=?)";
@@ -69,6 +185,21 @@ module.exports = {
 		bind.push(date);
 		bind.push(time);
 		mysqlDB.query(query, bind, (err, result) => {
+			if (err) return console.log(err);
+			callback(result);
+		});
+	},
+	getAllPostsOfTrip: function (callback) {
+		let query = "select * from chuyenxe ";
+		mysqlDB.query(query, (err, result) => {
+			if (err) return console.log(err);
+			callback(result);
+		});
+	},
+
+	getAllBuses: function (callback) {
+		let query = "select * from xe ";
+		mysqlDB.query(query, (err, result) => {
 			if (err) return console.log(err);
 			callback(result);
 		});
@@ -181,12 +312,16 @@ module.exports = {
 		});
 	},
 	findCusByEmail: function (email, callback) {
-		let query = "select * from `khachhang` where Email=?";
-		let notdone = false;
-		mysqlDB.query(query, email, (err, result) => {
-			if (err) return callback(notdone);
-			callback(result);
-		});
+		try {
+			let query = "select * from `khachhang` where Email=?";
+			let notdone = false;
+			mysqlDB.query(query, email, (err, result) => {
+				if (err) return callback(notdone);
+				callback(result);
+			});
+		} catch (error) {
+			console.log(error);
+		}
 	},
 	reviewTicket: function (id, callback) {
 		let query = "select * from `khachhang` where Email=?";
